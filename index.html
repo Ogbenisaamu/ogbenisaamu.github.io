@@ -1,364 +1,713 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Oyeyiga Samuel | Data Analyst</title>
 
-    <meta name="description"
-        content="Oyeyiga Samuel — Data Analyst focused on business intelligence, financial analysis, data visualization and actionable insights.">
+    <meta name="description" content="Oyeyiga Samuel - Data Analyst specializing in Power BI, Excel, SQL, Python, Business and Financial Analytics.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Inter", sans-serif;
+            background: #08111f;
+            color: #f8fafc;
             line-height: 1.6;
-            color: #172033;
-            background: #ffffff;
         }
 
-        /* NAVIGATION */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
 
-            background: rgba(255, 255, 255, 0.96);
-            border-bottom: 1px solid #e5e7eb;
+            background: rgba(8, 17, 31, 0.92);
+            backdrop-filter: blur(12px);
 
-            padding: 18px 8%;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
 
+        .nav-container {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #2196f3;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #d7e1ef;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2196f3;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 80% 40%, rgba(34, 101, 220, 0.28), transparent 35%),
+                radial-gradient(circle at 100% 80%, rgba(124, 58, 237, 0.25), transparent 30%),
+                #08111f;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+            background-size: 45px 45px;
+            mask-image: linear-gradient(to bottom, black, transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 7px 14px;
+            margin-bottom: 18px;
+
+            border-radius: 30px;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+
+            color: white;
+
+            background: linear-gradient(90deg, #2196f3, #7c3aed);
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.05;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #2196f3;
+        }
+
+        .hero-title {
+            font-size: 25px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 560px;
+            color: #aebbd0;
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #168bf3, #2563eb);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-outline {
+            border: 1px solid #64748b;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: #2196f3;
+            color: #2196f3;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .social-links a {
+            font-size: 14px;
+            color: #b9c7da;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #2196f3;
+        }
+
+
+        /* =========================
+           HERO VISUAL
+        ========================= */
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .dashboard-frame {
+            position: relative;
+
+            padding: 12px;
+
+            border-radius: 16px;
+
+            background: linear-gradient(
+                135deg,
+                #2196f3,
+                #2563eb,
+                #7c3aed
+            );
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,0.45),
+                0 0 50px rgba(37,99,235,0.15);
+        }
+
+        .dashboard-frame img {
+            width: 100%;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .floating-card {
+            position: absolute;
+
+            right: -30px;
+            bottom: 60px;
+
+            padding: 14px 20px;
+
+            border: 1px solid #3b82f6;
+            border-radius: 10px;
+
+            background: rgba(8,17,31,0.95);
+
+            font-size: 13px;
+            font-weight: 600;
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-label {
+            color: #2196f3;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+        }
+
+        .section-label::after {
+            content: "";
+            display: inline-block;
+
+            width: 35px;
+            height: 1px;
+
+            margin-left: 10px;
+
+            vertical-align: middle;
+
+            background: #2196f3;
+        }
+
+        .section-title {
+            font-size: 34px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #f1f5f9;
+            color: #12213a;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 16px;
+            max-width: 600px;
+        }
+
+        .about-highlights {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .highlight {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #334155;
+            font-size: 13px;
+        }
+
+        .highlight-icon {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background: #dbeafe;
+            color: #2563eb;
+
+            font-size: 18px;
+        }
+
+        .about-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 16px;
+
+            box-shadow: 0 15px 40px rgba(15,23,42,0.08);
+        }
+
+        .about-card div {
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .about-card div:last-child {
+            border-bottom: none;
+        }
+
+        .about-card strong {
+            display: block;
+            color: #2563eb;
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .about-card span {
+            color: #475569;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROJECT
+        ========================= */
+
+        .project {
+            background:
+                radial-gradient(circle at 80% 50%, rgba(37,99,235,0.12), transparent 35%),
+                #0b1729;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .project-description {
+            color: #aebbd0;
+            margin-bottom: 22px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .tech-tag {
+            padding: 6px 12px;
+
+            border: 1px solid #31506f;
+            border-radius: 20px;
+
+            color: #c9dcf4;
+            font-size: 12px;
+        }
+
+        .project-image {
+            padding: 8px;
+
+            border: 1px solid #31506f;
+            border-radius: 12px;
+
+            background: #0f2037;
+        }
+
+        .project-image img {
+            width: 100%;
+            border-radius: 7px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            background: #f1f5f9;
+            color: #12213a;
+        }
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 12px;
+        }
+
+        .skill-card {
+            background: white;
+
+            padding: 22px;
+
+            border-radius: 10px;
+
+            border: 1px solid #e2e8f0;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            border-color: #93c5fd;
+            box-shadow: 0 10px 25px rgba(15,23,42,0.08);
+        }
+
+        .skill-icon {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .skill-card h4 {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .skill-card p {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+
+        /* =========================
+           OTHER PROJECTS
+        ========================= */
+
+        .other-projects {
+            background: #101e32;
+        }
+
+        .other-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .other-content p {
+            color: #9fb0c7;
+            max-width: 600px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #168bf3,
+                    #2563eb,
+                    #7c3aed
+                );
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-description {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .contact-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .contact-item {
+            padding: 18px;
+
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 10px;
+
+            background: rgba(255,255,255,0.08);
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .contact-item span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .contact-button {
+            margin-top: 25px;
+        }
+
+        .contact-button .btn {
+            background: white;
+            color: #2563eb;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 25px 0;
+
+            background: #06101d;
+
+            color: #8da0b8;
+            font-size: 12px;
+        }
+
+        .footer-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 21px;
-            font-weight: 700;
-            color: #111827;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4b5563;
-            margin-left: 28px;
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #2563eb;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 78vh;
-
-            display: flex;
-            align-items: center;
-
-            padding: 90px 8%;
-
-            background: linear-gradient(
-                135deg,
-                #f8fafc 0%,
-                #ffffff 60%,
-                #eff6ff 100%
-            );
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .eyebrow {
-            color: #2563eb;
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-size: clamp(44px, 7vw, 76px);
-            line-height: 1.05;
-            color: #111827;
-            margin-bottom: 20px;
-        }
-
-        .hero h2 {
-            font-size: clamp(23px, 3vw, 34px);
-            color: #2563eb;
-            margin-bottom: 22px;
-        }
-
-        .hero p {
-            max-width: 700px;
-            font-size: 19px;
-            color: #4b5563;
-            margin-bottom: 32px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 13px 22px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s ease;
-        }
-
-        .primary-button {
-            background: #2563eb;
+        .footer-name {
             color: white;
+            font-weight: 700;
         }
 
-        .primary-button:hover {
-            background: #1d4ed8;
-        }
 
-        .secondary-button {
-            border: 1px solid #d1d5db;
-            color: #374151;
-            background: white;
-        }
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
-        .secondary-button:hover {
-            border-color: #2563eb;
-            color: #2563eb;
-        }
+        @media (max-width: 850px) {
 
-        /* GENERAL SECTIONS */
-
-        section {
-            padding: 85px 8%;
-        }
-
-        .section-heading {
-            max-width: 750px;
-            margin-bottom: 45px;
-        }
-
-        .section-heading h2 {
-            font-size: 38px;
-            color: #111827;
-            margin-bottom: 12px;
-        }
-
-        .section-heading p {
-            color: #6b7280;
-            font-size: 17px;
-        }
-
-        /* ABOUT */
-
-        .about {
-            background: white;
-        }
-
-        .about-content {
-            max-width: 850px;
-        }
-
-        .about-content p {
-            font-size: 17px;
-            color: #4b5563;
-            margin-bottom: 18px;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            background: #f8fafc;
-        }
-
-        .project-card {
-            max-width: 1000px;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            overflow: hidden;
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .project-image {
-            width: 100%;
-            display: block;
-        }
-
-        .project-content {
-            padding: 32px;
-        }
-
-        .project-content h3 {
-            font-size: 27px;
-            color: #111827;
-            margin-bottom: 12px;
-        }
-
-        .project-content p {
-            color: #4b5563;
-            margin-bottom: 18px;
-            max-width: 850px;
-        }
-
-        .tools {
-            margin: 20px 0 25px;
-        }
-
-        .tools span {
-            display: inline-block;
-            background: #eff6ff;
-            color: #1d4ed8;
-            padding: 7px 12px;
-            border-radius: 20px;
-            margin: 4px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* SKILLS */
-
-        .skills {
-            background: white;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1000px;
-        }
-
-        .skill-card {
-            padding: 25px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: #ffffff;
-        }
-
-        .skill-card h3 {
-            color: #111827;
-            margin-bottom: 8px;
-        }
-
-        .skill-card p {
-            color: #6b7280;
-            font-size: 15px;
-        }
-
-        /* CONTACT */
-
-        .contact {
-            background: #111827;
-            color: white;
-        }
-
-        .contact h2 {
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .contact p {
-            max-width: 650px;
-            color: #d1d5db;
-            font-size: 17px;
-            margin-bottom: 25px;
-        }
-
-        .contact .primary-button {
-            background: white;
-            color: #111827;
-        }
-
-        .contact .primary-button:hover {
-            background: #e5e7eb;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #0b1120;
-            color: #9ca3af;
-            text-align: center;
-            padding: 25px;
-            font-size: 14px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            nav {
-                padding: 16px 6%;
-            }
-
-            nav a {
-                margin-left: 12px;
-                font-size: 14px;
+            .nav-links {
+                gap: 15px;
             }
 
             .hero {
-                padding: 75px 6%;
+                padding: 70px 0;
+            }
+
+            .hero-content,
+            .about-grid,
+            .project-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                margin-top: 30px;
+            }
+
+            .floating-card {
+                right: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .other-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-container {
+                height: 65px;
+            }
+
+            .nav-links {
+                display: none;
             }
 
             section {
-                padding: 65px 6%;
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero-title {
+                font-size: 21px;
             }
 
             .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-        }
+            .contact-items {
+                grid-template-columns: 1fr;
+            }
 
-        @media (max-width: 550px) {
-
-            nav {
+            .footer-container {
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
             }
-
-            nav a {
-                margin: 0 7px;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .section-heading h2,
-            .contact h2 {
-                font-size: 31px;
-            }
-
         }
 
     </style>
@@ -367,330 +716,651 @@
 
 <body>
 
-    <!-- NAVIGATION -->
 
-    <nav>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-        <div class="logo">
-            Oyeyiga Samuel
-        </div>
+<nav>
+
+    <div class="container nav-container">
+
+        <a href="#" class="logo">
+            Oyeyiga <span>Samuel</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
 
         <div>
 
-            <a href="#about">About</a>
-
-            <a href="#projects">Projects</a>
-
-            <a href="#skills">Skills</a>
-
-            <a href="#contact">Contact</a>
-
-        </div>
-
-    </nav>
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="eyebrow">
-                Data Analytics Portfolio
-            </div>
+            <span class="badge">
+                DATA ANALYTICS PORTFOLIO
+            </span>
 
             <h1>
-                Oyeyiga Samuel
+                Oyeyiga <span>Samuel</span>
             </h1>
 
-            <h2>
+            <div class="hero-title">
                 Data Analyst | Business & Financial Analytics
-            </h2>
+            </div>
 
-            <p>
-                I turn raw data into clear, actionable insights that help
-                businesses understand performance, uncover opportunities,
-                and make better decisions.
+            <p class="hero-description">
+
+                I turn raw data into clear, actionable insights
+                that help businesses understand performance,
+                uncover opportunities, and make better decisions.
+
             </p>
+
 
             <div class="buttons">
 
-                <a href="#projects" class="button primary-button">
-                    View My Projects
+                <a href="#projects" class="btn btn-primary">
+                    View My Projects →
                 </a>
 
-                <a href="#contact" class="button secondary-button">
-                    Let's Connect
+                <a href="#" class="btn btn-outline">
+                    Download CV ↓
+                </a>
+
+            </div>
+
+
+            <div class="social-links">
+
+                <a href="#" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="#" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="mailto:your-email@example.com">
+                    Email
                 </a>
 
             </div>
 
         </div>
 
-    </section>
+
+        <div class="hero-visual">
+
+            <div class="dashboard-frame">
+
+                <img
+                    src="images/sales-analysis-dashboard.png"
+                    alt="Sales Analysis Dashboard"
+                >
+
+            </div>
+
+            <div class="floating-card">
+                Data-Driven<br>
+                Better Decisions
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- ABOUT -->
 
-    <section id="about" class="about">
+<!-- =========================
+     ABOUT
+========================= -->
 
-        <div class="section-heading">
+<section class="about" id="about">
 
-            <h2>
+    <div class="container about-grid">
+
+
+        <div class="about-text">
+
+            <div class="section-label">
                 About Me
+            </div>
+
+            <h2 class="section-title">
+                Turning Data into<br>
+                Meaningful Insights
             </h2>
 
             <p>
-                Combining business experience with data analytics.
-            </p>
-
-        </div>
-
-
-        <div class="about-content">
-
-            <p>
-                I am a Data Analyst focused on transforming data into
-                practical business insights. My background in operations,
-                customer service, travel and documentation has given me
-                experience working with business processes, client
-                information and operational data.
+                I am a Data Analyst with a background in operations,
+                customer service, travel and documentation. This
+                experience gives me a practical understanding of how
+                businesses operate and how data can support better
+                decisions.
             </p>
 
             <p>
-                I am developing my expertise in Power BI, Microsoft Excel,
-                SQL and Python, with a particular interest in business
-                intelligence, financial analysis, customer analytics and
-                performance reporting.
+                I work with tools such as Power BI, Excel, SQL and
+                Python to analyze data, build interactive dashboards
+                and provide insights that drive smarter decisions.
             </p>
 
-            <p>
-                I enjoy taking complex information, identifying the patterns
-                that matter, and communicating those findings through clear
-                dashboards and simple explanations that support better
-                decision-making.
-            </p>
 
-        </div>
+            <div class="about-highlights">
 
-    </section>
+                <div class="highlight">
 
+                    <div class="highlight-icon">
+                        ◉
+                    </div>
 
-    <!-- PROJECTS -->
-
-    <section id="projects" class="projects">
-
-        <div class="section-heading">
-
-            <h2>
-                Featured Project
-            </h2>
-
-            <p>
-                A selection of practical analytics work demonstrating my
-                approach to data preparation, analysis and visualization.
-            </p>
-
-        </div>
-
-
-        <div class="project-card">
-
-            <img
-                src="images/sales-analysis-dashboard.png"
-                alt="Retail Sales Analysis Dashboard by Oyeyiga Samuel"
-                class="project-image"
-            >
-
-
-            <div class="project-content">
-
-                <h3>
-                    Retail Sales Analysis Dashboard
-                </h3>
-
-                <p>
-                    An interactive Power BI dashboard developed to analyze
-                    retail sales performance, profitability, customer
-                    segments, product performance and sales trends.
-                </p>
-
-                <p>
-                    The project involved preparing the data with Power Query,
-                    analyzing the relationships between sales, customer and
-                    product information, creating DAX measures and presenting
-                    the findings through an interactive dashboard.
-                </p>
-
-
-                <div class="tools">
-
-                    <span>Power BI</span>
-                    <span>Power Query</span>
-                    <span>DAX</span>
-                    <span>Excel</span>
-                    <span>Data Visualization</span>
+                    Analytical Mindset
 
                 </div>
 
 
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        ✦
+                    </div>
+
+                    Problem Solver
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        ↗
+                    </div>
+
+                    Continuous Learner
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="about-card">
+
+            <div>
+
+                <strong>
+                    LOCATION
+                </strong>
+
+                <span>
+                    Lagos, Nigeria
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    EMAIL
+                </strong>
+
+                <span>
+                    your-email@example.com
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    LINKEDIN
+                </strong>
+
+                <span>
+                    Add your LinkedIn profile
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    GITHUB
+                </strong>
+
+                <span>
+                    Add your GitHub profile
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURED PROJECT
+========================= -->
+
+<section class="project" id="projects">
+
+    <div class="container project-grid">
+
+
+        <div>
+
+            <div class="section-label">
+                Featured Project
+            </div>
+
+            <h2 class="section-title">
+                Retail Sales Analysis Dashboard
+            </h2>
+
+            <p class="project-description">
+
+                An interactive Power BI dashboard developed
+                to analyze retail sales performance,
+                profitability, customer segments,
+                product performance and sales trends.
+
+            </p>
+
+
+            <div class="tech-tags">
+
+                <span class="tech-tag">
+                    Power BI
+                </span>
+
+                <span class="tech-tag">
+                    Excel
+                </span>
+
+                <span class="tech-tag">
+                    Power Query
+                </span>
+
+                <span class="tech-tag">
+                    DAX
+                </span>
+
+            </div>
+
+
+            <a
+                href="retail-sales-dashboard.html"
+                class="btn btn-primary"
+            >
+                View Full Case Study →
+            </a>
+
+        </div>
+
+
+
+        <div class="project-image">
+
+            <img
+                src="images/sales-analysis-dashboard.png"
+                alt="Retail Sales Analysis Dashboard"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section class="skills" id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            Skills & Tools
+        </div>
+
+        <h2 class="section-title">
+            My Technical Skills
+        </h2>
+
+        <p style="color:#64748b; max-width:600px; margin-bottom:35px;">
+
+            Tools and technologies I use to analyze data,
+            build dashboards and support business decisions.
+
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    📊
+                </div>
+
+                <h4>
+                    Power BI
+                </h4>
+
+                <p>
+                    Data Visualization
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    📗
+                </div>
+
+                <h4>
+                    Excel
+                </h4>
+
+                <p>
+                    Data Analysis
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🔄
+                </div>
+
+                <h4>
+                    Power Query
+                </h4>
+
+                <p>
+                    Data Preparation
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ƒx
+                </div>
+
+                <h4>
+                    DAX
+                </h4>
+
+                <p>
+                    Advanced Analytics
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🗄️
+                </div>
+
+                <h4>
+                    SQL
+                </h4>
+
+                <p>
+                    Data Querying
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🐍
+                </div>
+
+                <h4>
+                    Python
+                </h4>
+
+                <p>
+                    Automation & Analysis
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     OTHER PROJECTS
+========================= -->
+
+<section class="other-projects">
+
+    <div class="container other-content">
+
+        <div>
+
+            <div class="section-label">
+                Other Projects
+            </div>
+
+            <h2 class="section-title">
+                More Projects Coming Soon
+            </h2>
+
+            <p>
+                I am continuously building projects in business
+                analytics, financial analysis, SQL, Python and
+                data visualization.
+            </p>
+
+        </div>
+
+
+        <a href="#contact" class="btn btn-outline">
+            Explore My Work →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container contact-grid">
+
+
+        <div>
+
+            <div class="section-label" style="color:white;">
+                Get In Touch
+            </div>
+
+            <h2 class="section-title">
+                Let's Work Together
+            </h2>
+
+            <p class="contact-description">
+
+                I'm open to analytics opportunities,
+                internships, collaborations and conversations
+                around data, business intelligence and
+                financial analysis.
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <div class="contact-items">
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        EMAIL
+                    </strong>
+
+                    <span>
+                        your-email@example.com
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        LINKEDIN
+                    </strong>
+
+                    <span>
+                        Your LinkedIn Profile
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        GITHUB
+                    </strong>
+
+                    <span>
+                        Your GitHub Profile
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        LOCATION
+                    </strong>
+
+                    <span>
+                        Lagos, Nigeria
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-button">
+
                 <a
-                    href="retail-sales-dashboard.html"
-                    class="button primary-button"
+                    href="mailto:your-email@example.com"
+                    class="btn"
                 >
-                    View Full Case Study →
+                    Send a Message →
                 </a>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- SKILLS -->
 
-    <section id="skills" class="skills">
+<!-- =========================
+     FOOTER
+========================= -->
 
-        <div class="section-heading">
+<footer>
 
-            <h2>
-                Skills & Tools
-            </h2>
+    <div class="container footer-container">
 
-            <p>
-                Technical and analytical skills I am developing to solve
-                real-world business problems with data.
-            </p>
-
+        <div class="footer-name">
+            Oyeyiga Samuel
         </div>
 
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-
-                <h3>
-                    Data Visualization
-                </h3>
-
-                <p>
-                    Power BI, dashboard design, data storytelling and
-                    business reporting.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>
-                    Data Analysis
-                </h3>
-
-                <p>
-                    Microsoft Excel, DAX, data exploration and
-                    performance analysis.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>
-                    Business Analytics
-                </h3>
-
-                <p>
-                    Business intelligence, financial analysis, customer
-                    analytics and KPI reporting.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>
-                    Data Preparation
-                </h3>
-
-                <p>
-                    Data cleaning, transformation and preparation using
-                    Power Query and Excel.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>
-                    SQL
-                </h3>
-
-                <p>
-                    Developing practical SQL skills for querying,
-                    transforming and analyzing data.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>
-                    Python
-                </h3>
-
-                <p>
-                    Building practical Python skills for data analysis,
-                    automation and visualization.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact" class="contact">
-
-        <h2>
-            Let's Connect
-        </h2>
-
-        <p>
-            I am open to analytics opportunities, internships,
-            collaborations and conversations around data, business
-            intelligence and financial analysis.
-        </p>
-
-        <a
-            href="mailto:your-email@example.com"
-            class="button primary-button"
-        >
-            Get In Touch
-        </a>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
+        <div>
             © 2026 Oyeyiga Samuel. All rights reserved.
-        </p>
+        </div>
 
-    </footer>
+    </div>
+
+</footer>
+
 
 </body>
-
 </html>
