@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logistics Operations Analysis | Oyeyiga Samuel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Inter, sans-serif;
+    background: #061326;
+    color: #fff;
+    line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+nav {
+    padding: 22px 0;
+    background: #041122;
+    border-bottom: 1px solid #1d304b;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.logo { font-size: 22px; font-weight: 800; }
+.logo span { color: #0798ff; }
+.back { color: #0798ff; font-weight: 600; }
+
+.hero { padding: 85px 0 65px; }
+
+.tag {
+    display: inline-block;
+    background: linear-gradient(90deg,#078fff,#6738e8);
+    border-radius: 30px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+h1 span { color: #0798ff; }
+
+.lead {
+    max-width: 780px;
+    font-size: 18px;
+    color: #b8c7dc;
+    margin-bottom: 28px;
+}
+
+.buttons { display: flex; flex-wrap: wrap; gap: 14px; }
+
+.btn {
+    display: inline-block;
+    padding: 13px 21px;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.primary { background: #078fff; }
+.outline { border: 1px solid #55769e; }
+
+section { padding: 55px 0; }
+
+.section-title { font-size: 30px; margin-bottom: 18px; }
+
+.muted { color: #b2c2d7; }
+
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.kpi, .panel {
+    background: linear-gradient(145deg,#102747,#091a32);
+    border: 1px solid #203956;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.kpi small { display: block; color: #aebfd4; margin-bottom: 9px; }
+.kpi strong { color: #39aaff; font-size: 25px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.panel h3 { margin-bottom: 10px; color: #fff; }
+.panel p, .panel li { color: #b2c2d7; }
+.panel ul { padding-left: 20px; }
+.panel li { margin: 7px 0; }
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tools span {
+    padding: 8px 13px;
+    border-radius: 8px;
+    background: #122c4c;
+    border: 1px solid #284768;
+    color: #d8e9ff;
+    font-size: 14px;
+}
+
+.note {
+    margin-top: 22px;
+    padding: 18px;
+    border-left: 3px solid #078fff;
+    background: #0a1c34;
+    color: #b8c7dc;
+}
+
+footer {
+    text-align: center;
+    padding: 28px 0;
+    color: #8193ab;
+    border-top: 1px solid #20314a;
+}
+
+@media (max-width: 800px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    nav .container { align-items: flex-start; flex-direction: column; }
+    .kpis { grid-template-columns: 1fr 1fr; }
+    .kpi { padding: 15px; }
+    .kpi strong { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container">
+        <a href="index.html" class="logo">Oyeyiga <span>Samuel</span></a>
+        <a href="index.html#projects" class="back">← Back to Portfolio</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container">
+        <span class="tag">POWER BI CAPSTONE PROJECT</span>
+        <h1>Logistics Operations<br><span>Analysis</span></h1>
+        <p class="lead">
+            A four-page Power BI report examining logistics operations,
+            delivery performance, fleet efficiency, costs, maintenance,
+            and safety to support data-informed operational decisions.
+        </p>
+
+        <div class="buttons">
+            <a class="btn primary" href="Logistics-Operations-Capstone.pdf" target="_blank" rel="noopener noreferrer">
+                View Full PDF Report →
+            </a>
+            <a class="btn outline" href="index.html#projects">Explore Other Projects</a>
+        </div>
+
+        <div class="tools">
+            <span>Power BI</span>
+            <span>Excel</span>
+            <span>Power Query</span>
+            <span>DAX</span>
+            <span>Data Visualization</span>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">Project Overview</h2>
+        <p class="muted">
+            This project brings together logistics data to examine shipment
+            volume, billing trends, delivery timeliness, customer service,
+            driver and truck performance, fuel expenditure, maintenance,
+            downtime, and safety incidents.
+        </p>
+
+        <div class="kpis">
+            <div class="kpi">
+                <small>Total Loads</small>
+                <strong>85.4K</strong>
+            </div>
+            <div class="kpi">
+                <small>Total Billings</small>
+                <strong>298.6M</strong>
+            </div>
+            <div class="kpi">
+                <small>Total Miles</small>
+                <strong>122.2M</strong>
+            </div>
+            <div class="kpi">
+                <small>On-Time Delivery</small>
+                <strong>44.6%</strong>
+            </div>
+            <div class="kpi">
+                <small>Total Fuel Cost</small>
+                <strong>95.6M</strong>
+            </div>
+        </div>
+
+        <p class="note">
+            Figures shown above are taken from the overall report view.
+            Billing and cost figures retain the report's displayed units.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">The Four Dashboard Pages</h2>
+        <p class="muted">
+            Each page focuses on a different set of operational questions.
+        </p>
+
+        <div class="grid">
+            <div class="panel">
+                <h3>01. Executive Operations Overview</h3>
+                <ul>
+                    <li>Total loads, billings, miles, and fuel costs</li>
+                    <li>Monthly load volume and billing trends</li>
+                    <li>On-time delivery trends</li>
+                    <li>Facility activity and booking-type billings</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h3>02. Delivery & Customer Performance</h3>
+                <ul>
+                    <li>On-time delivery by route</li>
+                    <li>Route revenue compared with service performance</li>
+                    <li>Facility detention performance</li>
+                    <li>Customer delivery performance over time</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h3>03. Fleet & Driver Performance</h3>
+                <ul>
+                    <li>Driver and truck counts</li>
+                    <li>Driver workload and on-time performance</li>
+                    <li>Truck utilization and fuel efficiency</li>
+                    <li>Relationship between utilization and MPG</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h3>04. Cost, Fuel, Maintenance & Safety</h3>
+                <ul>
+                    <li>Fuel expenditure and cost per mile</li>
+                    <li>Maintenance cost and vehicle downtime</li>
+                    <li>Fuel cost by route</li>
+                    <li>Safety incidents and claims</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">Business Questions</h2>
+        <div class="panel">
+            <ul>
+                <li>How are shipment volume and billing changing over time?</li>
+                <li>Which routes and facilities show delivery-service challenges?</li>
+                <li>How are drivers and trucks performing?</li>
+                <li>How do truck utilization and fuel efficiency relate?</li>
+                <li>How do maintenance costs, downtime, and safety incidents affect operations?</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">Tools & Approach</h2>
+        <p class="muted">
+            The report uses Power BI visuals to bring operational measures
+            and trends together across four analytical views. The project
+            emphasizes KPI monitoring, comparisons over time, and
+            relationships between service, fleet, cost, and safety measures.
+        </p>
+        <div class="tools">
+            <span>Power BI Desktop</span>
+            <span>Data Modeling</span>
+            <span>DAX Measures</span>
+            <span>Power Query</span>
+            <span>Dashboard Design</span>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="panel">
+            <h2 class="section-title">Explore the Full Report</h2>
+            <p class="muted">
+                Open the five-page PDF to review the dashboard visuals
+                and the business questions documented for each page.
+            </p>
+            <br>
+            <a class="btn primary" href="Logistics-Operations-Capstone.pdf" target="_blank" rel="noopener noreferrer">
+                Open Capstone PDF →
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Oyeyiga Samuel · Logistics Operations Analysis
+</footer>
+
+</body>
+</html>
